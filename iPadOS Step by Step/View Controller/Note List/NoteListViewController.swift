@@ -37,7 +37,8 @@ class NoteListViewController: UIViewController {
         guard let identifier = segue.identifier else { return }
         if identifier == "detailSegue" {
             guard let destination = segue.destination as? NoteDetailViewController else { return }
-            
+            guard let indexPath = sender as? IndexPath else { return }          
+            destination.note = store.notes[indexPath.row]
         }
     }
     
