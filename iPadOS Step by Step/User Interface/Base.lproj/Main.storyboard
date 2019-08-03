@@ -93,27 +93,27 @@
                     </view>
                     <navigationItem key="navigationItem" id="0Sd-Hp-kRk">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="APb-mX-QBT">
+                            <barButtonItem title="Share" id="APb-mX-QBT">
                                 <connections>
                                     <action selector="tappedWithShare:" destination="Brx-YC-mgt" id="BcV-Qm-miO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="photo.on.rectangle" catalog="system" id="w2Y-P8-Kea">
+                            <barButtonItem title="Library" id="w2Y-P8-Kea">
                                 <connections>
                                     <action selector="tappedWithPhotoLibrary:" destination="Brx-YC-mgt" id="N6q-au-wwn"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="camera.viewfinder" catalog="system" id="a48-WN-6l8">
+                            <barButtonItem title="Scan" id="a48-WN-6l8">
                                 <connections>
                                     <action selector="tappedWithScanner:" destination="Brx-YC-mgt" id="F6b-id-5cI"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="folder" catalog="system" id="o0l-9V-Sxx">
+                            <barButtonItem title="File" id="o0l-9V-Sxx">
                                 <connections>
                                     <action selector="tappedWithDocument:" destination="Brx-YC-mgt" id="mWk-eW-w8e"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="trash" catalog="system" id="th8-CS-RdL">
+                            <barButtonItem title="Clear" id="th8-CS-RdL">
                                 <connections>
                                     <action selector="tappedWithClearCanvas:" destination="Brx-YC-mgt" id="Pjl-Rb-ZTq"/>
                                 </connections>
@@ -148,11 +148,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera.viewfinder" catalog="system" width="64" height="58"/>
-        <image name="folder" catalog="system" width="64" height="48"/>
-        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
-    </resources>
 </document>

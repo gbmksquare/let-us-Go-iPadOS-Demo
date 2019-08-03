@@ -28,14 +28,8 @@ class NoteListViewController: UIViewController {
     
     private func setup() {
         collectionView.register(UINib(nibName: "NoteCell", bundle: nil), forCellWithReuseIdentifier: NoteCell.reuseIdentifier)
-        collectionView.backgroundColor = .secondarySystemBackground
         collectionView.delegate = self
         collectionView.dataSource = self
-        listenForNoteUpdate()
-    }
-    
-    private func listenForNoteUpdate() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handle(notesUpdated:)), name: NoteStore.didUpdate, object: nil)
     }
     
     // MARK: - Navigation
@@ -43,8 +37,7 @@ class NoteListViewController: UIViewController {
         guard let identifier = segue.identifier else { return }
         if identifier == "detailSegue" {
             guard let destination = segue.destination as? NoteDetailViewController else { return }
-            guard let indexPath = sender as? IndexPath else { return }
-            destination.note = store.notes[indexPath.row]
+            
         }
     }
     
@@ -67,16 +60,14 @@ class NoteListViewController: UIViewController {
     // MARK: -
     @objc
     private func addNewNote() {
-        store.addNewNote()
+        
     }
     
     private func deleteAll() {
-        store.deleteAll()
+        
     }
     
     private func presentSharesheet(item: Any?, from indexPath: IndexPath) {
-//        guard let image = item as? UIImage else { return }
-//        guard let cell = collectionView.cellForItem(at: indexPath) else  { return }
         
     }
 }
@@ -123,8 +114,7 @@ extension NoteListViewController: UICollectionViewDelegateFlowLayout, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCell.reuseIdentifier, for: indexPath) as! NoteCell
-        let note = store.notes[indexPath.row]
-        cell.populate(with: note)
+        
         return cell
     }
 }

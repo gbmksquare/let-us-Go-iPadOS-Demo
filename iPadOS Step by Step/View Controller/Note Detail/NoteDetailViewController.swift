@@ -62,19 +62,11 @@ class NoteDetailViewController: UIViewController {
     }
     
     private func presentImagePicker() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = false
-        picker.mediaTypes = [kUTTypeImage as String]
-        present(picker, animated: true)
+        
     }
     
     private func presentSharesheet(_ sourceView: UIBarButtonItem? = nil) {
-        guard let outputImage = generateImage() else { return }
-        let share = UIActivityViewController(activityItems: [outputImage], applicationActivities: nil)
-        share.popoverPresentationController?.barButtonItem = sourceView
-        present(share, animated: true)
+        
     }
     
     // MARK: - Canvas
@@ -118,15 +110,7 @@ extension NoteDetailViewController {
 // MARK: - Image picker
 extension NoteDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        defer {
-            dismiss(animated: true)
-        }
         
-        if let image = info[.editedImage] as? UIImage {
-            
-        } else if let image = info[.originalImage] as? UIImage {
-            
-        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
